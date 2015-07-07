@@ -1,0 +1,19 @@
+Useful notes to myself while learning web develoment with Meteor:
+
+Inserting into a collection
+Collection_name.insert(object)
+We can assign any properties to the task object, such as the time created, since we don't ever have to define a schema for the collection.
+Being able to insert anything into the database from the client isn't very secure.
+
+Sound with meteor:
+https://github.com/brentjanderson/meteor-buzz
+meteor add brentjanderson:buzz
+
+public files go in the "public" directory.
+
+to modify the database globally I will need to write a method that runs on the server side.
+
+By default, every newly created Meteor app contains the autopublish package, which automatically publishes all available documents to every client. To exercise finer-grained control over what documents different clients receive, first remove autopublish, in your terminal:
+meteor remove autopublish
+
+

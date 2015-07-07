@@ -1,0 +1,14 @@
+Objetivo 
+hacer una aplicación web en Meteor que permita reproducir sonidos, dependiendo de estados que cambien en uno u otro navegador.
+
+Ejemplo
+Una aplicación que en el cliente tenga cuatro radio buttons. Cuando dos navegadores acceden a la aplicación, en ambos se ve el mismo estado. O sea, si en uno se elige la primer opción, se refleja esa selección en ambos clientes (eso es una característica de Meteor bastante básica). Ahora, cuando en un navegador se selecciona una opción, en los otros navegadores debe sonar un sonido dependiente de la opción que se eligió. 
+
+Puntos extra
+* Utilizar bootstrap para la UI
+* Hacer la reproducción del sonido también en el servidor 
+
+Forma de entrega
+Repositorio público en github (invitame) con las instrucciones necesarias para poder ejecutar la aplicación.
+
+Me gustaría si me pudieras dar una fecha y horario cuando te parece que podremos revisar el resultado.
