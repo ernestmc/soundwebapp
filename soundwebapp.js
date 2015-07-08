@@ -15,6 +15,13 @@ if (Meteor.isServer)
       soundState.insert({name:"Eagle", file:"eagle.mp3", checked:false, session:0});
     }
   });
+  
+  // Track changes in our db
+  soundState.find().observeChanges({changed: function(id){
+    sound = soundState.findOne(id);
+    if (sound.checked)
+      playServerSound(sound.name);
+  }});
 }
 
 if (Meteor.isClient)
@@ -63,4 +70,34 @@ function playSound(soundName)
   console.log("Playing sound: " + soundName);
   s = new buzz.sound(element.file);
   s.play();
+}
+
+// Play a sound on the server side using mplayer.
+function playServerSound(soundName)
+{
+  // find filename associated with this sound type
+  element = soundState.findOne({name: soundName});
+  
+  path = getPath() + "/public/";
+  
+  // command to execute
+  cmd = "mplayer -quiet " + path + element.file;
+
+  exec = Npm.require('child_process').exec;
+
+  child = exec(cmd, function(error, stdout, stderr) {
+    console.log('stdout: ' + stdout);
+    console.log('stderr: ' + stderr);
+
+    if(error !== null) {
+      console.log('exec error: ' + error);
+    }
+  });
+}
+
+// Get the path to the application root
+function getPath()
+{
+  path = Npm.require('fs').realpathSync( process.cwd() + '/../../../../../' );
+  return path;
 }
