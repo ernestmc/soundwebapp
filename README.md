@@ -8,6 +8,10 @@ Note: uses Buzz  https://github.com/brentjanderson/meteor-buzz
 
 meteor add brentjanderson:buzz
 
+and also uses boostrap:
+
+meteor add twbs:bootstrap
+
 ###How to use it
 
 First, download the app:

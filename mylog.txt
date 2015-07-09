@@ -19,3 +19,5 @@ meteor remove autopublish
 Note: testing on Android the sound played when called from a local click event, but not when it's called from the db.change event. Tested on Android 2.3.5 and 5.1.1.
 http://stackoverflow.com/questions/12206631/html5-audio-cant-play-through-javascript-unless-triggered-manually-once
 
+To add boostrap package (new one):
+meteor add twbs:bootstrap
