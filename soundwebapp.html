@@ -1,22 +1,25 @@
 <head>
   <title>Sounds</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <div class="container">
-    <header>
-      <h1>Sounds</h1>
-    </header>
-
-    <form class="opciones">
-      {{#each soundOptions}}
-        {{> soundOption}}
-      {{/each}}
+    <div class="theme">
+      <h1>Play some sounds!</h1>
+      <p>Select a sound and let everyone connected to this page hear it play!</p> 
+    </div>
+    <form>
+        {{#each soundOptions}}
+          <div class="from-group">
+            {{> soundOption}}
+          </div>
+        {{/each}}
     </form>
-
   </div>
 </body>
 
 <template name="soundOption">
-  <input class="soundOption" type="radio" name="sound" value="{{name}}" checked={{checked}}>{{name}} 
+  <label><input class="soundOption" type="radio" name="sound" value="{{name}}" checked={{checked}}> {{name}}</label>
 </template>
